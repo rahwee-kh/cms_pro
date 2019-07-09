@@ -9,6 +9,7 @@
    <table class="table">
        <thead>
        <tr>
+           <th>Image</th>
            <th>ID</th>
            <th>Name</th>
            <th>Email</th>
@@ -23,6 +24,7 @@
        @if($users)
            @foreach($users as $user)
        <tr>
+           <td><img height="50" src="{{ $user->photo? $user->photo->file: 'photo' }}"></td>
            <td>{{$user->id}}</td>
            <td>{{$user->name}}</td>
            <td>{{$user->email}}</td>
