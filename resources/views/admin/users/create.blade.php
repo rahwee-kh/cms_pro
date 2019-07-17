@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if(Session::has('action'))
+
+        <p class="bg-success">{{session('action')}}</p>
+
+    @endif
+
     <h1>Create Users</h1>
 
     {{ Form::open(['method' => 'POST', 'action'=>'AdminUserController@store', 'files'=>true]) }}
@@ -56,6 +62,7 @@
 
 
     {{ Form::close() }}
+
 
 
     @include('admin.includes.form-error')
